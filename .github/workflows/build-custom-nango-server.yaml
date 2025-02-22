@@ -3,7 +3,7 @@ name: 'Build Custom Nango Server Image'
 on:
     push:
         branches:
-            - master
+            - main
     workflow_dispatch:
 
 concurrency:
