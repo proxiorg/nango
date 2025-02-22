@@ -16,5 +16,5 @@ jobs:
         secrets: inherit
         with:
             package: server
-            run-cmd: build:prod
-            tags: -t myproxi/nango-server:${{ github.sha }}
+            run-cmd: build:hosted
+            tags: -t myproxi/nango-server:hosted -t myproxi/nango-server:hosted-${{ github.sha }}
