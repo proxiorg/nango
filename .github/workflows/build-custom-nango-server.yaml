@@ -17,4 +17,4 @@ jobs:
         with:
             package: server
             run-cmd: build:prod
-            tags: -t proxiorg/nango-server:${{ github.sha }}
+            tags: -t myproxi/nango-server:${{ github.sha }}
