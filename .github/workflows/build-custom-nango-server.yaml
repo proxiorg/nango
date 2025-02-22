@@ -1,0 +1,20 @@
+name: 'Build Custom Nango Server Image'
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+concurrency:
+    group: custom-nango-server-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    custom-nango-server:
+        uses: ./.github/workflows/push-container.yaml
+        secrets: inherit
+        with:
+            package: server
+            run-cmd: build:hosted
+            tags: -t myproxi/nango-server:hosted -t myproxi/nango-server:hosted-${{ github.sha }}
